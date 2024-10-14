@@ -1,7 +1,7 @@
 // routes/employeeRoutes.js
 const express = require('express');
 const router = express.Router();
-const Employee = require('../models/Employee'); // Import Employee model
+const Employee = require('../models/Employee'); 
 
 // GET /api/v1/emp/employees
 router.get('/employees', async (req, res) => {
@@ -45,11 +45,11 @@ router.post('/employees', async (req, res) => {
     });
 
     try {
-        const savedEmployee = await newEmployee.save(); // Save the employee
-        console.log('Employee created:', savedEmployee); // Log the saved employee
+        const savedEmployee = await newEmployee.save(); 
+        console.log('Employee created:', savedEmployee); 
         res.status(201).json(savedEmployee); // Return the full employee details
     } catch (error) {
-        console.error('Error creating employee:', error); // Log the error for debugging
+        console.error('Error creating employee:', error); 
         res.status(500).json({ message: 'Error creating employee.' });
     }
 });

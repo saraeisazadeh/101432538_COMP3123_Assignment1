@@ -1,13 +1,13 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-const User = require('../models/User'); // Assuming you will create a User model
+const User = require('../models/User'); 
 
 // POST /api/v1/user/signup
 router.post('/signup', async (req, res) => {
     const { username, email, password } = req.body;
 
-    // Validate input (basic validation, you can enhance this)
+    // Validate input 
     if (!username || !email || !password) {
         return res.status(400).json({ message: 'All fields are required!' });
     }
